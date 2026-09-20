@@ -125,7 +125,6 @@
             background: var(--filter-hover);
         }
 
-        /* Сумма — справа и жирным */
         td.amount {
             text-align: right;
             font-weight: 600;
@@ -136,7 +135,6 @@
             text-align: right;
         }
 
-        /* Категория — как бейдж */
         .badge {
             display: inline-block;
             padding: 4px 12px;
@@ -154,7 +152,6 @@
         .badge.Здоровье    { background: #2ecc7133; color: #2ecc71; }
         .badge.Другое      { background: #95a5a633; color: #7f8c8d; }
 
-        /* Кнопка удаления — красивая */
         .delete-btn {
             display: inline-flex;
             align-items: center;
@@ -176,13 +173,11 @@
             transform: scale(1.1);
         }
 
-        /* Комментарий — серым */
         td.comment {
             color: var(--text);
             opacity: 0.7;
         }
 
-        /* Дата — серым */
         td.date {
             color: var(--text);
             opacity: 0.8;
@@ -214,7 +209,6 @@
             font-weight: bold;
         }
 
-        /* Блок с итоговой суммой */
         .total-box {
             background: var(--card-bg);
             padding: 12px 20px;
@@ -265,7 +259,6 @@
             transition: background 0.3s;
         }
 
-        /* Кнопка переключения темы */
         .theme-toggle {
             position: fixed;
             top: 20px;
@@ -289,6 +282,130 @@
 
         .theme-toggle:hover {
             transform: scale(1.1);
+        }
+
+        /* ============================================ */
+        /* АДАПТИВ ПОД ТЕЛЕФОН                          */
+        /* ============================================ */
+        @media (max-width: 768px) {
+            body {
+                margin: 20px auto;
+                padding: 0 12px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            form {
+                padding: 15px;
+            }
+
+            label {
+                display: block;
+                width: 100%;
+                margin-bottom: 4px;
+            }
+
+            input, select {
+                width: 100%;
+                box-sizing: border-box;
+                margin-bottom: 12px;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px;
+                font-size: 15px;
+            }
+
+            /* Layout — в одну колонку */
+            .layout {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .right-col {
+                flex: 1;
+                width: 100%;
+            }
+
+            .left-col {
+                width: 100%;
+                overflow-x: auto;
+            }
+
+            table {
+                font-size: 13px;
+                min-width: 500px;
+            }
+
+            th, td {
+                padding: 8px 10px;
+            }
+
+            .badge {
+                font-size: 11px;
+                padding: 3px 8px;
+            }
+
+            .delete-btn {
+                width: 26px;
+                height: 26px;
+                font-size: 12px;
+            }
+
+            .filters a {
+                padding: 5px 10px;
+                font-size: 12px;
+                margin-bottom: 5px;
+            }
+
+            .total-box {
+                font-size: 16px;
+                padding: 10px 15px;
+            }
+
+            .total-box strong {
+                font-size: 18px;
+            }
+
+            .theme-toggle {
+                top: 10px;
+                right: 10px;
+                width: 44px;
+                height: 44px;
+                font-size: 18px;
+            }
+
+            .stats-box {
+                padding: 15px;
+            }
+        }
+
+        /* Очень узкие экраны (iPhone SE и т.п.) */
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            table {
+                font-size: 12px;
+                min-width: 420px;
+            }
+
+            th, td {
+                padding: 6px 8px;
+            }
+
+            .filters a {
+                font-size: 11px;
+                padding: 4px 8px;
+            }
         }
     </style>
 </head>
