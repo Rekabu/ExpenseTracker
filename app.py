@@ -186,6 +186,21 @@ def is_logged_in():
 
 
 # ---------- МАРШРУТЫ ----------
+@app.route("/add", methods=["POST"])
+def add():
+    if not is_logged_in():
+        return redirect("/login")
+
+    amount = request.form.get("amount")
+    category = request.form.get("category")
+    date_val = request.form.get("date")
+    comment = request.form.get("comment", "")
+
+    if amount and category and date_val:
+        add_expense(session["user_id"], amount, category, date_val, comment)
+
+    return redirect("/")
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -240,9 +255,7 @@ def index():
     if not is_logged_in():
         return redirect("/login")
 
-    weather = None
     period = request.args.get("period")
-    error = None
 
     if request.method == "POST":
         amount = request.form.get("amount")

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Трекер расходов</title>
     <style>
-        /* Светлая тема (по умолчанию) */
         :root {
             --bg: #ffffff;
             --text: #2c3e50;
@@ -21,7 +20,6 @@
             --filter-active-text: #ffffff;
         }
 
-        /* Тёмная тема */
         body.dark {
             --bg: #1a1a2e;
             --text: #e0e0e0;
@@ -47,11 +45,8 @@
             transition: background 0.3s, color 0.3s;
         }
 
-        h1, h2 {
-            color: var(--text);
-        }
+        h1, h2 { color: var(--text); }
 
-        /* Шапка пользователя */
         .user-bar {
             display: flex;
             justify-content: flex-end;
@@ -61,9 +56,7 @@
             font-size: 15px;
         }
 
-        .user-bar strong {
-            color: #3498db;
-        }
+        .user-bar strong { color: #3498db; }
 
         .logout-btn {
             padding: 6px 14px;
@@ -75,9 +68,7 @@
             transition: background 0.2s;
         }
 
-        .logout-btn:hover {
-            background: var(--filter-hover);
-        }
+        .logout-btn:hover { background: var(--filter-hover); }
 
         form {
             background: var(--card-bg);
@@ -113,9 +104,7 @@
             font-size: 14px;
         }
 
-        button:hover {
-            background: #2980b9;
-        }
+        button:hover { background: #2980b9; }
 
         table {
             width: 100%;
@@ -144,13 +133,8 @@
             font-size: 15px;
         }
 
-        tbody tr {
-            transition: background 0.15s;
-        }
-
-        tbody tr:hover {
-            background: var(--filter-hover);
-        }
+        tbody tr { transition: background 0.15s; }
+        tbody tr:hover { background: var(--filter-hover); }
 
         td.amount {
             text-align: right;
@@ -158,9 +142,7 @@
             color: #3498db;
         }
 
-        th.amount {
-            text-align: right;
-        }
+        th.amount { text-align: right; }
 
         .badge {
             display: inline-block;
@@ -200,19 +182,10 @@
             transform: scale(1.1);
         }
 
-        td.comment {
-            color: var(--text);
-            opacity: 0.7;
-        }
+        td.comment { color: var(--text); opacity: 0.7; }
+        td.date { color: var(--text); opacity: 0.8; }
 
-        td.date {
-            color: var(--text);
-            opacity: 0.8;
-        }
-
-        .filters {
-            margin-bottom: 15px;
-        }
+        .filters { margin-bottom: 15px; }
 
         .filters a {
             display: inline-block;
@@ -226,10 +199,7 @@
             transition: background 0.2s;
         }
 
-        .filters a:hover {
-            background: var(--filter-hover);
-        }
-
+        .filters a:hover { background: var(--filter-hover); }
         .filters a.active {
             background: var(--filter-active);
             color: var(--filter-active-text);
@@ -263,14 +233,8 @@
             align-items: flex-start;
         }
 
-        .left-col {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .right-col {
-            flex: 0 0 400px;
-        }
+        .left-col { flex: 1; min-width: 0; }
+        .right-col { flex: 0 0 400px; }
 
         .right-col img {
             width: 100%;
@@ -307,125 +271,42 @@
             z-index: 1000;
         }
 
-        .theme-toggle:hover {
-            transform: scale(1.1);
-        }
+        .theme-toggle:hover { transform: scale(1.1); }
 
-        /* ============================================ */
-        /* АДАПТИВ ПОД ТЕЛЕФОН                          */
-        /* ============================================ */
         @media (max-width: 768px) {
-            body {
-                margin: 20px auto;
-                padding: 0 12px;
-            }
-
+            body { margin: 20px auto; padding: 0 12px; }
             h1 { font-size: 22px; }
             h2 { font-size: 18px; }
-
             form { padding: 15px; }
-
-            label {
-                display: block;
-                width: 100%;
-                margin-bottom: 4px;
-            }
-
-            input, select {
-                width: 100%;
-                box-sizing: border-box;
-                margin-bottom: 12px;
-            }
-
-            button {
-                width: 100%;
-                padding: 12px;
-                font-size: 15px;
-            }
-
-            .layout {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .right-col {
-                flex: 1;
-                width: 100%;
-            }
-
-            .left-col {
-                width: 100%;
-                overflow-x: auto;
-            }
-
-            table {
-                font-size: 13px;
-                min-width: 500px;
-            }
-
+            label { display: block; width: 100%; margin-bottom: 4px; }
+            input, select { width: 100%; box-sizing: border-box; margin-bottom: 12px; }
+            button { width: 100%; padding: 12px; font-size: 15px; }
+            .layout { flex-direction: column; gap: 20px; }
+            .right-col { flex: 1; width: 100%; }
+            .left-col { width: 100%; overflow-x: auto; }
+            table { font-size: 13px; min-width: 500px; }
             th, td { padding: 8px 10px; }
-
-            .badge {
-                font-size: 11px;
-                padding: 3px 8px;
-            }
-
-            .delete-btn {
-                width: 26px;
-                height: 26px;
-                font-size: 12px;
-            }
-
-            .filters a {
-                padding: 5px 10px;
-                font-size: 12px;
-                margin-bottom: 5px;
-            }
-
-            .total-box {
-                font-size: 16px;
-                padding: 10px 15px;
-            }
-
+            .badge { font-size: 11px; padding: 3px 8px; }
+            .delete-btn { width: 26px; height: 26px; font-size: 12px; }
+            .filters a { padding: 5px 10px; font-size: 12px; margin-bottom: 5px; }
+            .total-box { font-size: 16px; padding: 10px 15px; }
             .total-box strong { font-size: 18px; }
-
-            .theme-toggle {
-                top: 10px;
-                right: 10px;
-                width: 44px;
-                height: 44px;
-                font-size: 18px;
-            }
-
+            .theme-toggle { top: 10px; right: 10px; width: 44px; height: 44px; font-size: 18px; }
             .stats-box { padding: 15px; }
-
-            .user-bar {
-                font-size: 14px;
-                margin-bottom: 15px;
-            }
+            .user-bar { font-size: 14px; margin-bottom: 15px; }
         }
 
         @media (max-width: 400px) {
             h1 { font-size: 20px; }
-
-            table {
-                font-size: 12px;
-                min-width: 420px;
-            }
-
+            table { font-size: 12px; min-width: 420px; }
             th, td { padding: 6px 8px; }
-
-            .filters a {
-                font-size: 11px;
-                padding: 4px 8px;
-            }
+            .filters a { font-size: 11px; padding: 4px 8px; }
         }
     </style>
 </head>
 <body>
     <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">🌙</button>
 
-    <!-- Шапка пользователя -->
     <div class="user-bar">
         Привет, <strong>{{ username }}</strong>!
         <a href="/logout" class="logout-btn">Выйти</a>
@@ -462,7 +343,6 @@
     </form>
 
     <div class="layout">
-        <!-- Левая колонка — таблица -->
         <div class="left-col">
             <h2>Мои расходы</h2>
 
@@ -505,7 +385,6 @@
             {% endif %}
         </div>
 
-        <!-- Правая колонка — график -->
         <div class="right-col">
             <h2>Статистика</h2>
             <div class="stats-box">
@@ -515,18 +394,15 @@
     </div>
 
     <script>
-        // При загрузке — проверяем сохранённую тему
         const savedTheme = localStorage.getItem("theme");
         if (savedTheme === "dark") {
             document.body.classList.add("dark");
             document.getElementById("themeBtn").textContent = "☀️";
         }
 
-        // Переключение темы
         function toggleTheme() {
             document.body.classList.toggle("dark");
             const isDark = document.body.classList.contains("dark");
-
             document.getElementById("themeBtn").textContent = isDark ? "☀️" : "🌙";
             localStorage.setItem("theme", isDark ? "dark" : "light");
         }
